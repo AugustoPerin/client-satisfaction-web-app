@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 25 95% 53%; /* Orange primary */
+    --primary-foreground: 0 0% 100%; /* White text on orange */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 35 100% 95%; /* Light orange accent */
+    --accent-foreground: 25 95% 53%; /* Darker orange text on light orange */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 25 95% 53%; /* Orange ring */
+    --radius: 0.5rem;
+
+    /* Custom light orange theme */
+    --theme-orange-light: #FFF3E0; /* Very light orange */
+    --theme-orange-medium: #FFB74D; /* Medium orange */
+    --theme-orange-dark: #E65100;  /* Dark orange for text/accents */
+  }
+
+  .dark {
+    /* Define dark mode colors if needed, keeping orange theme */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 25 95% 53%; /* Orange primary */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 35 100% 15%; /* Darker orange accent for dark mode */
+    --accent-foreground: 25 95% 70%; /* Lighter orange text */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 25 95% 53%; /* Orange ring */
+
+    /* Custom light orange theme - dark mode adjustments */
+    --theme-orange-light: #422A00; /* Dark background with orange tint */
+    --theme-orange-medium: #FFB74D; /* Medium orange */
+    --theme-orange-dark: #FFF3E0;  /* Light orange for text/accents */
+  }
+}
+
+@layer base {
+  * {
+    /* @apply border-border; */ /* Removed problematic class */
+  }
+  body {
+    /* @apply bg-background text-foreground; */ /* Removed potentially problematic class */
+    /* @apply text-foreground; */ /* Removed potentially problematic class */
+    font-feature-settings: "rlig" 1, "calt" 1;
+    /* Apply light orange background using CSS variable */
+    background-color: var(--theme-orange-light);
+  }
+}
+
+/* Add any additional global styles here */
+
